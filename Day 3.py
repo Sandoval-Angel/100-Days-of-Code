@@ -81,6 +81,7 @@ def color_doors():
         initiate_game()
     elif color_choice[0] == 'y':
         print('\nYou open the yellow door. Behind it rests a wooden chest full of bitcoin pre-Musk tweet.\n'
+              'CONGRATULATIONS, YOU WIN!')
         input('\nPress Enter to exit: ')
         exit()
     elif color_choice[0] == 'b':
