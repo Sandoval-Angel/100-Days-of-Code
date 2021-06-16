@@ -1,6 +1,15 @@
 import random
 import hangman_art
 import hangman_words
+from os import system, name
+
+
+def clear():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
+
 
 word = random.choice(hangman_words.available_words)
 word_tracker = ['_'] * len(word)
@@ -14,8 +23,12 @@ print(hangman_art.logo)
 while not game_over:
     guess = input('\nGuess a letter: ')[0]
 
+    clear()
+
     if guess in guessed_letters:
         print(f'\nYou have already guessed that!')
+        print(hangman_art.stages[lives])
+        print(' '.join(word_tracker))
         continue
     else:
         guessed_letters.append(guess)
